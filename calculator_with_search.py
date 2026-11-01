@@ -32,7 +32,7 @@ def solve_for_x(expression, target):
 
         try:
             # Evaluate the math expression using the current guess for x
-            result = eval(expression, {"__builtins__": None}, {"x": x})
+            result = eval(expression, {"x": x})
             diff = abs(result - target)
 
             # If this guess is closer to the target than our previous best, save it
@@ -87,7 +87,7 @@ def visualize_search():
     current_x = 0.0
     while current_x <= 10.0:
         x = round(current_x, 1)
-        result = eval(expression, {"__builtins__": None}, {"x": x})
+        result = eval(expression, {"x": x})
         diff = round(abs(result - target), 2)
 
         print(f"Trying x = {x:4} | Result = {result:4} | Distance from target = {diff}")
